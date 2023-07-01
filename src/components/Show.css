@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    background: url("../../images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.alertmessage button{
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    color: rgb(255, 255, 255);
+}
+.container{
+    
+    display: flex;
+    gap: 0px;
+    width: 800px;
+    /* padding: px; */
+}
+.left-box
+{
+    width: 60%;
+    height: 500px;
+    color: whitesmoke;
+    background: url("../../images/city.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+   
+}
+.CurrentCity{
+    position: absolute;
+    right: 0;
+}
+.right-box{
+    background-color: rgb(0, 0, 0,0.6);
+    height: 500px;
+    width: 40%;
+    
+}
+.right-box button{
+    background-color: black;
+}
+.desc{
+    /* position: absolute; */
+    font-size: xx-large;
+    color: aliceblue;
+    text-align: center;
+}
+.custom{
+    position: relative;
+    bottom: 0;
+    top: 0px;
+}
+.custom .Search{
+    border-radius: 10px;
+    width: 200px;
+}
+.btn{
+    display: inline;
+    padding: 4px;
+    position: absolute;
+    right:50px;
+    top:5px;
+}
+
+
+.display1 , .display2
+{
+    height: 250px;
+}
+
+.display2
+{
+    font-size: medium ;
+    font-weight: 500;
+    color: white;
+}
+.display2 span{
+    position: absolute;
+    right: 0;
+}
+hr{
+    position: absolute;
+    background-color: aliceblue;
+    width:260px;
+    opacity: 0.35;
+    right: 290px;
+}
+.item{
+    padding: 2px;
+    margin: 20px 10px 5px 10px;
+    position: relative;
+}
+.bottomClock{
+    position: absolute;
+    float: left;
+    bottom: 0;
+    text-align: left;
+    
+}
+.bottomClock .current-time{
+    font-size: xx-large;
+}
+.temperature {
+    font-size: xx-large;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
