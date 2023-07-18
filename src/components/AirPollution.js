@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import "./AirPollution.css"
 
+let api = "e2d023b018b931d352b12d9a422483d0"
 
 const obj = {
     aqi: "",
@@ -11,8 +12,7 @@ const obj = {
     no2: "",
     o3: "",
     so2: "",
-    nh3: "",
-    message :""
+    nh3: ""
 }
 const corrdinateInfo = {
     lat: 0,
@@ -40,7 +40,7 @@ export default function AirPollution() {
     const fetchCord = async () => {
 
         try {
-            const url = `https://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=2&appid=e2d023b018b931d352b12d9a422483d0`
+            const url = `https://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=2&appid=${api}`
             const response = await fetch(url);
             if (!response.ok) {
                 throw new Error('Network response was not OK');
@@ -69,7 +69,7 @@ export default function AirPollution() {
 
         try {
 
-            const url = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${cord.lat}&lon=${cord.lon}&appid=e2d023b018b931d352b12d9a422483d0`
+            const url = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${cord.lat}&lon=${cord.lon}&appid=${api}`
             const response = await fetch(url);
             const resjson = await response.json();
 
@@ -84,9 +84,11 @@ export default function AirPollution() {
                 so2: resjson.list[0].components.so2,
                 nh3: resjson.list[0].components.nh3
             });
+
+
             console.log(info);
             setSearch("");
- 
+
         }
         catch (err) {
             console.log(err);
@@ -96,43 +98,45 @@ export default function AirPollution() {
     }
     return (
         <>
-            <div className="Search">
-                <input type="text" name="SearchBox" className='Search my-1 mx-4' id="1" value={search} onChange={(event) => { setSearch(event.target.value) }} placeholder='  Search any city....' />
-                <button type="button" className="btn btn-primary btn-sm" onClick={HandleOnClick}><i className="fa-sharp fa-solid fa-magnifying-glass" ></i></button>
-            </div>
-            <div className="AIRcontainer text-white">
-                <div className="items mx-3">
+            <div className="Outer">
 
-                    <div className="item my-1 first-span">
-                        <b> <span>(μg/m3)</span></b>
-                    </div>
-                    <div className="item">
-                        <b>PM 2.5</b> <span>{info.pm25}</span>
-                    </div>
-                    <div className="item">
-                        <b>PM 10</b> <span>{info.pm10}</span>
-                    </div>
-                    <div className="item">
-                        <b>CO</b> <span>{info.co}</span>
-                    </div>
-                    <div className="item">
-                        <b>NO</b> <span>{info.no}</span>
-                    </div>
-                    <div className="item">
-                        <b>NO<sub>2</sub></b> <span>{info.no2}</span>
-                    </div>
-                    <div className="item">
-                        <b>O<sub>3</sub></b> <span>{info.o3}</span>
-                    </div>
-                    <div className="item">
-                        <b>SO<sub>2</sub></b> <span>{info.so2}</span>
-                    </div>
-                    <div className="item">
-                        <b>NH<sub>3</sub></b> <span>{info.nh3}</span>
-                    </div>
-                    <div className="item ">
-                    
-                        <b>AQI </b> <span>{info.aqi} </span>
+                <div className="Search">
+                    <input type="text" name="SearchBox" className='Search my-1 mx-1' id="1" value={search} onChange={(event) => { setSearch(event.target.value) }} placeholder='  Search any city....' />
+                    <button type="button" className="btn-primary" onClick={HandleOnClick}><i className="fa-sharp fa-solid fa-magnifying-glass" ></i></button>
+                </div>
+                <div className="AIRcontainer text-white">
+                    <div className="items mx-3 my-3">
+
+                        <div className="item my-3 first-span">
+                            <b> <span>(μg/m3)</span></b>
+                        </div>
+                        <div className="item Cl">
+                            <b>PM 2.5</b> <span>{info.pm25}</span>
+                        </div>
+                        <div className="item Cl">
+                            <b>PM 10</b> <span>{info.pm10}</span>
+                        </div>
+                        <div className="item Cl">
+                            <b>CO</b> <span>{info.co}</span>
+                        </div>
+                        <div className="item Cl">
+                            <b>NO</b> <span>{info.no}</span>
+                        </div>
+                        <div className="item Cl">
+                            <b>NO<sub>2</sub></b> <span>{info.no2}</span>
+                        </div>
+                        <div className="item Cl">
+                            <b>O<sub>3</sub></b> <span>{info.o3}</span>
+                        </div>
+                        <div className="item Cl">
+                            <b>SO<sub>2</sub></b> <span>{info.so2}</span>
+                        </div>
+                        <div className="item Cl">
+                            <b>NH<sub>3</sub></b> <span>{info.nh3}</span>
+                        </div>
+                        <div className="item Cl text-white">
+                            <b>AQI {info.aqi === 5 ? "(Very Poor)" : info.aqi === 4 ? "(Poor)" : info.aqi === 3 ? "(modrate)" : info.aqi === 2 ? "(Fair)" : info.aqi === 1 ? "(Good)" : ""}  </b> <span>{info.aqi}</span>
+                        </div>
                     </div>
                 </div>
             </div>

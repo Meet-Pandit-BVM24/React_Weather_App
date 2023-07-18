@@ -17,7 +17,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<AirPollution />} />
+          <Route path="/React_Weather_App" element={<AirPollution />} />
           <Route exact path="/AirPollution" element={<AirPollution />} />
           <Route exact path="/Weather" element={<Show />} />
         </Routes>

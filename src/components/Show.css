@@ -1,31 +1,33 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-body
-{
+
+body {
     background: url("../../images/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
-.alertmessage button{
+
+.alertmessage button {
     width: 20px;
     height: 20px;
     background-color: black;
     color: rgb(255, 255, 255);
 }
-.container{
-    
+
+.container {
+
     display: flex;
     gap: 0px;
     width: 800px;
     /* padding: px; */
 }
-.left-box
-{
-    width: 60%;
+
+.left-box {
+    width: 60vw;
     height: 500px;
     color: whitesmoke;
     background: url("../../images/city.jpg");
@@ -33,85 +35,179 @@ body
     background-size: cover;
     position: relative;
     display: flex;
-   
+
 }
-.CurrentCity{
+
+.CurrentCity {
     position: absolute;
     right: 0;
 }
-.right-box{
-    background-color: rgb(0, 0, 0,0.6);
+
+.right-box {
+    background-color: rgb(0, 0, 0, 0.6);
     height: 500px;
-    width: 40%;
-    
+    width: 40vw;
+
 }
-.right-box button{
+
+.right-box button {
     background-color: black;
 }
-.desc{
-    /* position: absolute; */
+
+.desc {
     font-size: xx-large;
     color: aliceblue;
     text-align: center;
 }
-.custom{
+
+.custom {
     position: relative;
-    bottom: 0;
     top: 0px;
 }
-.custom .Search{
+
+.custom .Search {
     border-radius: 10px;
     width: 200px;
 }
-.btn{
+
+.btn {
     display: inline;
     padding: 4px;
     position: absolute;
-    right:50px;
-    top:5px;
+    right: 50px;
+    top: 5px;
 }
 
 
-.display1 , .display2
-{
-    height: 250px;
+.display1,
+.display2 {
+    height: 200px;
 }
 
-.display2
-{
-    font-size: medium ;
+.display2 {
+    font-size: medium;
     font-weight: 500;
     color: white;
 }
-.display2 span{
+
+.display2 span {
     position: absolute;
-    right: 0;
+    right: 55px;
 }
-hr{
-    position: absolute;
+
+hr {
+    top: 15px;
+    position: relative;
     background-color: aliceblue;
-    width:260px;
+    width: 210px;
     opacity: 0.35;
-    right: 290px;
+    left: 47px;
 }
-.item{
-    padding: 2px;
-    margin: 20px 10px 5px 10px;
+.Cityname {
+    left: 60px;
+    position: relative;
+    top: 5px;
+}
+.itemShow {
+    margin: 5px 0px 0px 51px;
     position: relative;
 }
-.bottomClock{
+
+.bottomClock {
     position: absolute;
     float: left;
     bottom: 0;
     text-align: left;
-    
+
 }
-.bottomClock .current-time{
+
+.bottomClock .current-time {
     font-size: xx-large;
 }
+
 .temperature {
     font-size: xx-large;
     position: absolute;
     bottom: 0;
     right: 0;
+}
+
+
+@media only screen and (max-width: 770px) {
+
+    .container {
+
+        display: flex;
+        gap: 0px;
+        width: 100%;
+        flex-direction: row-reverse;
+        margin: 5px auto;
+        padding: 0;
+    }
+
+    .right-box,
+    .left-box {
+        width: 50%;
+    }
+
+    .custom .Search {
+        border-radius: 8px;
+        width: 150px;
+    }
+
+    .btn {
+        display: inline;
+        padding: 0px;
+        position: absolute;
+        left: 180px;
+        top: 5px;
+    }
+
+    .left-box {
+        background-image: none;
+        background-color: rgb(0, 0, 0, 0.6);
+    }
+
+
+    .temperature {
+        top: -5px;
+    }
+
+    .CurrentCity {
+        top: 40px;
+        position: absolute;
+        right: 18px;
+    }
+
+    hr {
+        display: none;
+    }
+
+    .bottomClock {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        text-align: center;
+
+    }
+
+    .itemShow {
+        margin: 20px 10px;
+    }
+    .itemShow span{
+        position: absolute;
+        left: 155px;
+    }
+    .display1 {
+        height: 150px;
+    }
+
+    .display2 {
+        height: 350px;
+        margin-left: 25px;
+    }
+
+    .custom {
+        left: -20px;
+    }
 }

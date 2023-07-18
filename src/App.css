@@ -1,19 +1,28 @@
 nav {
     color: aliceblue;
 }
+
 .links ul li {
     list-style-type: none;
     display: inline;
     margin: 20px;
 }
-.links ul li a
-{
+
+.links ul li a {
     color: black;
     font-size: large;
     font-weight: 500;
 }
-.links ul li a:hover
-{
+
+.links ul li a:hover {
     color: red;
 }
 
+@media only screen and (max-width: 770px) {
+
+    .links ul li a {
+
+        left: 35px;
+        position: relative;
+    }
+}
